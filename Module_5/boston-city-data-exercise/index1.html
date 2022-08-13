@@ -1,0 +1,57 @@
+<div id="container">
+  <div id = "secondFunction"></div>
+  <!-- populated by JS-->
+</div>
+<script src="./boston.js"></script>
+<script>
+  function renderBoston(boston, container) {
+    //const len = boston.length; // boston is an array
+    var person = boston.data;
+    var len = boston.data.length;
+    var html = '';
+    for (let i = 0; i < len; i++) {
+          html += '<li class="boston">' +
+        '<h2>' + person[i][8] + '</h2>' +
+        '<h3>' + person[i][11] + '</h3>'
+    }
+    container.innerHTML = '<ul id = "boston">' + html + '</ul>';
+  }
+ function renderTopSalaries(boston, container){
+  var people = boston.data;
+  var topSalaries = people.sort((a,b)=> b[11]-a[11]).slice(0,5);
+  const len = topSalaries.length;
+  var html = '';
+  for (let i = 0; i < len; i++) {
+    html +=
+      '<li class="top">' +
+      '<h2>' +
+      topSalaries[i][8] +
+      '</h2>' +
+      '<h3>' +
+      topSalaries[i][11] +
+      '</h3>';
+  }
+
+  container.innerHTML = '<ul id = "topSalaries">' + html + '</ul>';
+}
+
+function renderOneHundredThousand(boston, container){
+  var people = boston.data;
+  var oneHundredK = people.filter((a,b)=>a[11]>100000);
+  const len = oneHundredK.length;
+  var html = '';
+  //for(let i = 0; i <len; i++){
+    html += 
+   '<li class ="top">' +
+      '<h2>' +
+        "Number of people working in Boston earning over $100,000 is " + 
+        oneHundredK.length; '</h2>'
+  
+  container.innerHTML = '<ul id = "topEmployees">' + html + '</ul>';
+} 
+ 
+ renderTopSalaries(boston, document.getElementById('container'));
+ renderOneHundredThousand(boston, document.getElementById('container'));
+  
+
+</script>
