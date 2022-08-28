@@ -1,0 +1,20 @@
+<html>
+  <script>
+    window.onload = function () {
+      const slot = document.getElementById("div1");
+      var time = 10;
+      const getTime= ()=>{time = time-1;
+        if (time >0)
+      {slot.innerHTML = 'Goodbye Aliens: ship leaves in ' +time+ ' seconds';}
+      else {slot.innerHTML = "You missed it slackers!!!"}
+      console.log(time);
+    } 
+    setInterval(getTime, 1000); 
+    }; 
+  </script>
+  <body>
+    <div>
+      <h1 id="div1"></h1>
+    </div>
+  </body>
+</html>
