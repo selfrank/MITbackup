@@ -8,9 +8,6 @@ describe('test greet()', function () {
     it('shouting', function () {
       expect(greet('JOSE')).toEqual('HELLO JOSE!');
     });
-    it('multiple', function () {
-      expect(greet(['Jose', 'Pep'])).toEqual('Hello, Jose, Pep');
-    });
     it('array', function () {
       expect(greet(['Alex', 'Arsene', 'Jose', 'Zidane'])).toEqual(
         'Hello, Alex, Arsene, Jose, Zidane'
