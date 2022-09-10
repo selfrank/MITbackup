@@ -1,0 +1,41 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html{
+    font-family: 'Montserrat';
+    font-size: 10px;
+}
+section{
+    min-height:100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+}
+.container{
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+}
+img{
+    height: 100%;
+    width: 100%;
+}
+.info{
+    width: 50%;
+    font-size: 3rem;
+    color: whitesmoke;
+    margin-right: -250px;
+    z-index: 2;
+}
+.img{
+    width: 50%;
+    border: 5px solid royalblue;
+    height: 500px;
+}
