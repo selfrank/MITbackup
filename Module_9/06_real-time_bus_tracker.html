@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <link rel="stylesheet" href ="my_bus_movement\bus_movement.css">
+</head>
+<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+<script src="https://api.mapbox.com/mapbox-gl-js/v1.11.0/mapbox-gl.js"></script>
+<link href="https://api.mapbox.com/mapbox-gl-js/v1.11.0/mapbox-gl.css" rel="stylesheet" />
+<body>
+    <div id = "header">
+        <h1>My bus map using arrows</h1>
+    </div>
+    <div id="map"></div>
+    </body>
+<script>
+
+	mapboxgl.accessToken = 'pk.eyJ1Ijoic2VsZnJhbmsiLCJhIjoiY2w3dHRzaDNkMDB4ZzN3bDRrbGE3NWd0MiJ9.2SMtsC-W2cGRP9bzvW3MVA'
+	var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v11',
+        center: [-71.104081,42.365554],
+        zoom: 14
+    }) ;
+
+    var marker = new mapboxgl.Marker()
+    .setLngLat([-71.092761,42.357575])
+    .addTo(map);
+
+	async function run(){
+			// get bus data    
+			const locations = await getBusLocations();
+			console.log(new Date());
+			console.log(locations);
+		
+			// timer
+			setTimeout(run, 15000);
+		}
+		
+		// Request bus data from MBTA
+		async function getBusLocations(){
+			const url = 'https://api-v3.mbta.com/vehicles?filter[route]=1&include=trip';
+			const response = await fetch(url);
+			const json     = await response.json();
+			return json.data;
+		}
+		
+		run();
+		
+</script>
+
+</html>
+
