@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Grid</title>
+    <style>
+        .on{
+            background: orange;
+        }                
+        .content{
+            display: grid;
+            grid-template-columns: repeat(10,1fr);
+            grid-template-rows: repeat(10,1fr);
+            gap: 5px;
+        }
+        div{
+            padding: 10px;
+            text-align: center;
+            border-style: solid;
+            font-size: 1em;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="createGrid()">CREATE GRID</button>    
+    <button onclick="move()" style="margin-bottom: 10px;">MOVE</button>
+    <main class="content" id="target">
+    </main>
+    <script>
+
+let position = 1; // The starting position of the grid
+const gridSize = 100; // The total number of the grid cells
+
+function createGrid() {
+  for (let i = 1; i <= gridSize; i++) {//loop through until gridSize variable number reached
+    var div = document.createElement('div');//creates the div
+    div.id = 'n' + i;//sets div id to n+the loop number
+    div.innerText = i;// sets the label on the grid
+    document.getElementById('target').appendChild(div);//adds div as child of content since content id is set to target
+  }
+}
+
+function move() {
+  setTimeout(() => {
+    if (position > gridSize) return;
+    toggle(position);
+    toggle(position - 1);
+    position += 1;
+    move();
+  }, 100);
+}
+
+function toggle(position) {
+  if (position < 1) return 0;
+  const name = 'n' + position;
+  const element = document.getElementById(name);
+  element.classList.toggle('on');
+}
+    </script>
+</body>
+</html>
