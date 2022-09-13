@@ -1,0 +1,69 @@
+<div id="ball" style="
+  z-index:5;
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  background:blue"></div>
+
+<script>
+
+var velocityX = 1;
+var velocityY = 3;
+var positionX = 0;
+var positionY = 0;
+var ball = document.getElementById('ball');
+var reverseX = false;
+var reverseY = false;
+var time = 10;
+// YOUR CODE 
+// ----------------
+function ballMovement(){
+  //X not reversed
+  if(!reverseX){
+  velocityX=3;
+  positionX=positionX+velocityX;
+  ball.style.left = positionX+'px';
+  ball.style.background = "blue";
+  ball.style.width = "50px";
+  ball.style.height = "50px";
+//X is reversed
+}else{
+ //velocityX=2;
+  positionX = positionX - velocityX;
+  ball.style.left = positionX +'px';
+  ball.style.background="red";
+  ball.style.width = "100px";
+  ball.style.height = "100px";
+}
+
+    //Y not reversed
+if(!reverseY){
+      velocityY= 1;
+      //velocityX=3;
+      positionY = positionY+velocityY;
+      ball.style.top = positionY +'px';
+      ball.style.background = "green";
+
+
+    //Y is reversed
+    }else {
+      velocityY=3;
+      //velocityX=5;
+      positionY = positionY - velocityY;
+      ball.style.top = positionY +'px';
+      ball.style.background="yellow";
+    }
+
+
+    if(positionX > 500 || positionX ===0){
+  reverseX = !reverseX;}
+if(positionY > 500 || positionY===0){
+  reverseY = !reverseY;
+}
+console.log(positionX,", ",positionY,", ",ball.style.background)}
+setInterval(ballMovement,time);
+
+</script>
