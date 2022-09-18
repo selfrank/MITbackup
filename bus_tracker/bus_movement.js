@@ -2,7 +2,11 @@ var map;
 var markers = [];
 
 // load map
+<<<<<<< HEAD
 function init(){ 
+=======
+function init(){
+>>>>>>> b47ecac1c0a0aea5f411fac0803a2a3c2763822d
 	var myOptions = {
 		zoom      : 13,
 		center    : { lat:42.353350,lng:-71.091525},

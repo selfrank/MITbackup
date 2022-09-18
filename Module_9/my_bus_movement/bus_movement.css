@@ -1,7 +1,13 @@
 #map{
+<<<<<<< HEAD
     height:500px;
     margin: auto;
     width: 100%;
+=======
+    width:1024px; 
+    height:768px;
+    margin: auto;
+>>>>>>> b47ecac1c0a0aea5f411fac0803a2a3c2763822d
 }
 body{
   background-color: black;
@@ -12,9 +18,13 @@ body{
 #header{
     color:darkolivegreen;
     text-align: center;
+<<<<<<< HEAD
 }
 body { margin: 0; padding: 0; }
 /*.map-overlay{
     position: absolute;
     left:0;
     padding: 10px;}*/
+=======
+}
+>>>>>>> b47ecac1c0a0aea5f411fac0803a2a3c2763822d
