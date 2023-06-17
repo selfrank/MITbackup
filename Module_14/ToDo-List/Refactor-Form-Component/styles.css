@@ -1,0 +1,58 @@
+body {
+  margin: 10;
+  background-image: url("pexels-felix-mittermeier-956981.jpg");
+  background-size: 100%;
+  color: whitesmoke;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+h1 {
+  margin-left: 50px;
+}
+.app {
+  background: none;
+  padding: 20px;
+  height: 100vh;
+  margin: 40px;
+}
+
+.todo-list{
+  background: #f6f9fd;
+  border-radius: 4px;
+  padding: 5px;
+  max-width: 400px;
+}
+
+.todo{
+  background: #9a9a9c;
+  color:black;
+  box-shadow: 1px 1px 1px rgba(0,0,0, 0.15);
+  padding: 3px 10px;
+  font-size: 24px;
+  margin-bottom: 6px;
+  border-radius: 3px;
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.input{
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #0e0130;
+  color:white;
+  border: 0;
+  border-radius: 4px;
+  box-shadow: none;
+  padding: 1rem;
+  height: 2.25em;
+  font-size: 24px;
+}
